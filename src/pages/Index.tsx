@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 
 const featuredTrials = [
   {
@@ -14,21 +15,21 @@ const featuredTrials = [
     description: "Evaluating a new approach to managing type 2 diabetes through innovative medication combinations.",
     location: "Boston, MA",
     compensation: "Up to $1,500",
-    formUrl: "https://forms.gle/p7L3ZrL2qikPQUxi6",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdYpQBCZPkPm3hYWL-9veySMJ6d7PH9HmYm8sDhqCKZWAUfQA/viewform",
   },
   {
     title: "Anxiety Treatment Research",
     description: "Testing a novel therapeutic approach for managing generalized anxiety disorder (GAD).",
     location: "Chicago, IL",
     compensation: "Up to $1,200",
-    formUrl: "https://forms.gle/p7L3ZrL2qikPQUxi6",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdYpQBCZPkPm3hYWL-9veySMJ6d7PH9HmYm8sDhqCKZWAUfQA/viewform",
   },
   {
     title: "Arthritis Pain Relief Study",
     description: "Investigating a new treatment option for individuals with chronic arthritis pain.",
     location: "San Francisco, CA",
     compensation: "Up to $2,000",
-    formUrl: "https://forms.gle/p7L3ZrL2qikPQUxi6",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdYpQBCZPkPm3hYWL-9veySMJ6d7PH9HmYm8sDhqCKZWAUfQA/viewform",
   },
 ];
 
@@ -63,7 +64,6 @@ const Index = () => {
       const bmi = weightInKg / (heightInMeters * heightInMeters);
       setBmiResult(Number(bmi.toFixed(1)));
 
-      // Determine BMI category
       if (bmi < 18.5) setBmiCategory("Underweight");
       else if (bmi < 25) setBmiCategory("Normal weight");
       else if (bmi < 30) setBmiCategory("Overweight");
@@ -71,9 +71,18 @@ const Index = () => {
     }
   };
 
+  const handleTrialClick = (formUrl: string) => {
+    console.log('Opening form URL:', formUrl);
+    try {
+      window.open(formUrl, '_blank', 'noopener,noreferrer');
+    } catch (error) {
+      console.error('Error opening form:', error);
+      toast.error("Unable to open the form. Please try again later.");
+    }
+  };
+
   return (
     <div className="min-h-screen">
-      {/* Subsidiary Notice */}
       <div className="bg-primary text-white text-sm py-2">
         <div className="container mx-auto px-6 text-center">
           A part of{" "}
@@ -88,7 +97,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Hero Section */}
       <section className="relative bg-accent overflow-hidden">
         <div className="container mx-auto px-6 py-24">
           <div className="max-w-3xl mx-auto text-center">
@@ -113,7 +121,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* BMI Calculator Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -168,7 +175,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Trials Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -184,7 +190,7 @@ const Index = () => {
               <TrialCard
                 key={index}
                 {...trial}
-                onClick={() => window.open(trial.formUrl, '_blank')}
+                onClick={() => handleTrialClick(trial.formUrl)}
               />
             ))}
           </div>
@@ -197,7 +203,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -226,7 +231,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -260,7 +264,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
       <section className="py-20 bg-accent">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
@@ -277,7 +280,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
