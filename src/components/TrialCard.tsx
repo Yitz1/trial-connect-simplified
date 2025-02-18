@@ -6,6 +6,7 @@ interface TrialCardProps {
   description: string;
   location: string;
   compensation: string;
+  formUrl: string;
   onClick: () => void;
 }
 
@@ -38,7 +39,7 @@ const TrialCard = ({ title, description, location, compensation, onClick }: Tria
           </div>
         </div>
         <div className="flex items-center gap-2 text-primary group-hover:translate-x-1 transition-transform">
-          <span className="text-sm font-medium">Learn More</span>
+          <span className="text-sm font-medium">Apply Now</span>
           <ArrowRight size={16} />
         </div>
       </div>
