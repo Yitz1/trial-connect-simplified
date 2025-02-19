@@ -15,21 +15,21 @@ const featuredTrials = [
     description: "Evaluating a new approach to managing type 2 diabetes through innovative medication combinations.",
     location: "Boston, MA",
     compensation: "Up to $1,500",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdYpQBCZPkPm3hYWL-9veySMJ6d7PH9HmYm8sDhqCKZWAUfQA/viewform",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfkW3Z3eLUAM5ixpw03NTaGJYGoqntug1OH4VOQ3cLWdL-3dQ/viewform?usp=header",
   },
   {
     title: "Anxiety Treatment Research",
     description: "Testing a novel therapeutic approach for managing generalized anxiety disorder (GAD).",
     location: "Chicago, IL",
     compensation: "Up to $1,200",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdYpQBCZPkPm3hYWL-9veySMJ6d7PH9HmYm8sDhqCKZWAUfQA/viewform",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfkW3Z3eLUAM5ixpw03NTaGJYGoqntug1OH4VOQ3cLWdL-3dQ/viewform?usp=header",
   },
   {
     title: "Arthritis Pain Relief Study",
     description: "Investigating a new treatment option for individuals with chronic arthritis pain.",
     location: "San Francisco, CA",
     compensation: "Up to $2,000",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdYpQBCZPkPm3hYWL-9veySMJ6d7PH9HmYm8sDhqCKZWAUfQA/viewform",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfkW3Z3eLUAM5ixpw03NTaGJYGoqntug1OH4VOQ3cLWdL-3dQ/viewform?usp=header",
   },
 ];
 
