@@ -30,7 +30,7 @@ const BMICalculator = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white border-y-2 border-purple-50">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -43,7 +43,7 @@ const BMICalculator = () => {
         <div className="max-w-md mx-auto bg-accent p-6 rounded-xl shadow-sm border-2 border-purple-200">
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <div>
+              <div className="p-2 rounded-lg border border-purple-100/50">
                 <Label htmlFor="feet">Height (feet)</Label>
                 <Input
                   id="feet"
@@ -56,7 +56,7 @@ const BMICalculator = () => {
                   className="border-purple-100 focus-visible:ring-purple-200"
                 />
               </div>
-              <div>
+              <div className="p-2 rounded-lg border border-purple-100/50">
                 <Label htmlFor="inches">Height (inches)</Label>
                 <Input
                   id="inches"
@@ -70,7 +70,7 @@ const BMICalculator = () => {
                 />
               </div>
             </div>
-            <div>
+            <div className="p-2 rounded-lg border border-purple-100/50">
               <Label htmlFor="weight">Weight (lb)</Label>
               <Input
                 id="weight"
@@ -84,7 +84,7 @@ const BMICalculator = () => {
             </div>
             <Button 
               onClick={calculateBMI}
-              className="w-full"
+              className="w-full border border-purple-100"
             >
               <Calculator className="mr-2" />
               Calculate BMI
