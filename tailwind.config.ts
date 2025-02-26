@@ -37,6 +37,21 @@ export default {
           DEFAULT: "#F5FAFC", // Very light teal
           foreground: "#008CB4",
         },
+        purple: {
+          DEFAULT: "#7E69AB", // Main purple
+          light: "#E5DEFF", // Light purple
+          dark: "#6E59A5", // Dark purple
+          50: "#F5F3FF",
+          100: "#EDE9FE",
+          200: "#DDD6FE",
+          300: "#C4B5FD",
+          400: "#A78BFA",
+          500: "#8B5CF6",
+          600: "#7C3AED",
+          700: "#6D28D9",
+          800: "#5B21B6",
+          900: "#4C1D95",
+        },
         muted: {
           DEFAULT: "#F6F6F7",
           foreground: "#666666",

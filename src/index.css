@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,19 +11,19 @@
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 220 89% 33%;
+    --primary: 194 100% 35%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 89% 95%;
-    --secondary-foreground: 220 89% 33%;
+    --secondary: 194 67% 94%;
+    --secondary-foreground: 194 100% 35%;
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 220 89% 97%;
-    --accent-foreground: 220 89% 33%;
+    --accent: 194 86% 97%;
+    --accent-foreground: 194 100% 35%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 220 89% 33%;
+    --ring: 194 100% 35%;
     --radius: 0.75rem;
   }
 }
@@ -53,3 +54,4 @@
 .float {
   animation: float 6s ease-in-out infinite;
 }
+
