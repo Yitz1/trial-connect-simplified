@@ -1,5 +1,6 @@
 
 import Hero from "@/components/Hero";
+import GeneralApplication from "@/components/GeneralApplication";
 import BMICalculator from "@/components/BMICalculator";
 import TrialsSection from "@/components/TrialsSection";
 import Benefits from "@/components/Benefits";
@@ -32,8 +33,9 @@ const Index = () => {
       </div>
 
       <Hero onFindTrialsClick={scrollToTrials} />
-      <BMICalculator />
+      <GeneralApplication />
       <TrialsSection />
+      <BMICalculator />
       <Benefits />
 
       <section className="py-20 bg-white">

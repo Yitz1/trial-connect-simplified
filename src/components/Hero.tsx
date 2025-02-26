@@ -24,9 +24,14 @@ const Hero = ({ onFindTrialsClick }: HeroProps) => {
             >
               Find Trials
             </button>
-            <button className="animate-fadeIn bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors border border-primary">
+            <a 
+              href="https://floridacrc.com/faqs/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="animate-fadeIn bg-white text-primary px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors border border-primary inline-flex items-center justify-center"
+            >
               Learn More
-            </button>
+            </a>
           </div>
         </div>
       </div>
