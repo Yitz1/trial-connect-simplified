@@ -10,7 +10,7 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ quote, author, title, rating }: TestimonialCardProps) => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+    <div className="bg-white p-6 rounded-xl shadow-sm border-2 border-purple-100">
       <div className="flex gap-1 mb-4">
         {[...Array(rating)].map((_, i) => (
           <StarIcon key={i} size={16} className="fill-primary text-primary" />

@@ -27,9 +27,13 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <Accordion type="single" collapsible className="w-full">
+    <Accordion type="single" collapsible className="w-full space-y-4">
       {faqData.map((item, index) => (
-        <AccordionItem key={index} value={`item-${index}`}>
+        <AccordionItem 
+          key={index} 
+          value={`item-${index}`}
+          className="border-2 border-purple-100 rounded-lg px-4"
+        >
           <AccordionTrigger className="text-left">{item.question}</AccordionTrigger>
           <AccordionContent>{item.answer}</AccordionContent>
         </AccordionItem>

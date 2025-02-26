@@ -40,7 +40,7 @@ const BMICalculator = () => {
             Calculate your Body Mass Index (BMI) to better understand your health status.
           </p>
         </div>
-        <div className="max-w-md mx-auto bg-accent p-6 rounded-xl shadow-sm">
+        <div className="max-w-md mx-auto bg-accent p-6 rounded-xl shadow-sm border-2 border-purple-200">
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -53,6 +53,7 @@ const BMICalculator = () => {
                   onChange={(e) => setFeet(e.target.value)}
                   min="0"
                   max="8"
+                  className="border-purple-100 focus-visible:ring-purple-200"
                 />
               </div>
               <div>
@@ -65,6 +66,7 @@ const BMICalculator = () => {
                   onChange={(e) => setInches(e.target.value)}
                   min="0"
                   max="11"
+                  className="border-purple-100 focus-visible:ring-purple-200"
                 />
               </div>
             </div>
@@ -77,6 +79,7 @@ const BMICalculator = () => {
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
                 min="0"
+                className="border-purple-100 focus-visible:ring-purple-200"
               />
             </div>
             <Button 
@@ -87,7 +90,7 @@ const BMICalculator = () => {
               Calculate BMI
             </Button>
             {bmiResult !== null && (
-              <div className="mt-4 p-4 bg-white rounded-lg border">
+              <div className="mt-4 p-4 bg-white rounded-lg border-2 border-purple-100">
                 <p className="text-lg font-medium text-gray-900">
                   Your BMI: {bmiResult}
                 </p>
