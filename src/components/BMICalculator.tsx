@@ -13,9 +13,10 @@ const BMICalculator = () => {
 
   const calculateBMI = () => {
     if (height && weight) {
-      const heightInMeters = Number(height) / 100;
-      const weightInKg = Number(weight);
-      const bmi = weightInKg / (heightInMeters * heightInMeters);
+      // BMI Formula for imperial units: (weight in pounds * 703) / (height in inches)²
+      const heightInInches = Number(height);
+      const weightInPounds = Number(weight);
+      const bmi = (weightInPounds * 703) / (heightInInches * heightInInches);
       setBmiResult(Number(bmi.toFixed(1)));
 
       if (bmi < 18.5) setBmiCategory("Underweight");
@@ -39,21 +40,24 @@ const BMICalculator = () => {
         <div className="max-w-md mx-auto bg-accent p-6 rounded-xl shadow-sm">
           <div className="space-y-4">
             <div>
-              <Label htmlFor="height">Height (cm)</Label>
+              <Label htmlFor="height">Height (inches)</Label>
               <Input
                 id="height"
                 type="number"
-                placeholder="Enter height in centimeters"
+                placeholder="Enter height in inches"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
               />
+              <p className="text-xs text-muted-foreground mt-1">
+                Example: 5'8" = 68 inches
+              </p>
             </div>
             <div>
-              <Label htmlFor="weight">Weight (kg)</Label>
+              <Label htmlFor="weight">Weight (lb)</Label>
               <Input
                 id="weight"
                 type="number"
-                placeholder="Enter weight in kilograms"
+                placeholder="Enter weight in pounds"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
               />
