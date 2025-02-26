@@ -8,7 +8,7 @@ const featuredTrials = [
     description: "Participating in innovative research for treatment-resistant major depressive disorder. Join us in advancing mental health care.",
     location: "Miami-Ft. Lauderdale, FL",
     compensation: "Up to $1,050",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfkW3Z3eLUAM5ixpw03NTaGJYGoqntug1OH4VOQ3cLWdL-3dQ/viewform?usp=header",
+    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdpwdmYvWOQ9o5TTc2pChHTRxBqyaHRVaJAblQ9HKHD7Ud00g/viewform?usp=header",
   },
 ];
 
