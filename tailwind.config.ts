@@ -26,16 +26,16 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#2D5A3D",
+          DEFAULT: "#008CB4", // Clinical Research Center teal
           foreground: "#FFFFFF",
         },
         secondary: {
-          DEFAULT: "#E9F1EC",
-          foreground: "#2D5A3D",
+          DEFAULT: "#E8F4F8", // Light teal
+          foreground: "#008CB4",
         },
         accent: {
-          DEFAULT: "#F4F9F6",
-          foreground: "#2D5A3D",
+          DEFAULT: "#F5FAFC", // Very light teal
+          foreground: "#008CB4",
         },
         muted: {
           DEFAULT: "#F6F6F7",

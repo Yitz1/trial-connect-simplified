@@ -6,16 +6,19 @@ import { Label } from "@/components/ui/label";
 import { Calculator } from "lucide-react";
 
 const BMICalculator = () => {
-  const [height, setHeight] = useState("");
+  const [feet, setFeet] = useState("");
+  const [inches, setInches] = useState("");
   const [weight, setWeight] = useState("");
   const [bmiResult, setBmiResult] = useState<number | null>(null);
   const [bmiCategory, setBmiCategory] = useState<string>("");
 
   const calculateBMI = () => {
-    if (height && weight) {
-      // BMI Formula for imperial units: (weight in pounds * 703) / (height in inches)²
-      const heightInInches = Number(height);
+    if (feet && inches && weight) {
+      // Convert height to total inches
+      const heightInInches = (Number(feet) * 12) + Number(inches);
       const weightInPounds = Number(weight);
+      
+      // BMI Formula for imperial units: (weight in pounds * 703) / (height in inches)²
       const bmi = (weightInPounds * 703) / (heightInInches * heightInInches);
       setBmiResult(Number(bmi.toFixed(1)));
 
@@ -39,18 +42,31 @@ const BMICalculator = () => {
         </div>
         <div className="max-w-md mx-auto bg-accent p-6 rounded-xl shadow-sm">
           <div className="space-y-4">
-            <div>
-              <Label htmlFor="height">Height (inches)</Label>
-              <Input
-                id="height"
-                type="number"
-                placeholder="Enter height in inches"
-                value={height}
-                onChange={(e) => setHeight(e.target.value)}
-              />
-              <p className="text-xs text-muted-foreground mt-1">
-                Example: 5'8" = 68 inches
-              </p>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="feet">Height (feet)</Label>
+                <Input
+                  id="feet"
+                  type="number"
+                  placeholder="Feet"
+                  value={feet}
+                  onChange={(e) => setFeet(e.target.value)}
+                  min="0"
+                  max="8"
+                />
+              </div>
+              <div>
+                <Label htmlFor="inches">Height (inches)</Label>
+                <Input
+                  id="inches"
+                  type="number"
+                  placeholder="Inches"
+                  value={inches}
+                  onChange={(e) => setInches(e.target.value)}
+                  min="0"
+                  max="11"
+                />
+              </div>
             </div>
             <div>
               <Label htmlFor="weight">Weight (lb)</Label>
@@ -60,6 +76,7 @@ const BMICalculator = () => {
                 placeholder="Enter weight in pounds"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
+                min="0"
               />
             </div>
             <Button 

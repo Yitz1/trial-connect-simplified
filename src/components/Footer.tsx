@@ -13,18 +13,17 @@ const Footer = () => {
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Find Trials</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
+              <li><a href="https://floridacrc.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
+              <li><a href="https://floridacrc.com/faqs/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">FAQs</a></li>
               <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-4">Legal</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a></li>
+              <li><a href="https://floridacrc.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
+              <li><a href="https://floridacrc.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</a></li>
+              <li><a href="https://floridacrc.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a></li>
             </ul>
           </div>
         </div>
