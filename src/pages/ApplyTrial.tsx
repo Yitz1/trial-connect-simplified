@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -20,7 +19,7 @@ const ApplyTrial = () => {
   // English and Spanish forms
   const formUrls = {
     en: "https://docs.google.com/forms/d/e/1FAIpQLSdpwdmYvWOQ9o5TTc2pChHTRxBqyaHRVaJAblQ9HKHD7Ud00g/viewform?usp=header",
-    es: "" // This will be updated when you provide the Spanish form link
+    es: "https://docs.google.com/forms/d/e/1FAIpQLSeUKhuLiLntSUQeSsKZkOoUhuMABp6fwW2DU3ugAMmMmPCTxQ/viewform?usp=header"
   };
 
   useEffect(() => {
