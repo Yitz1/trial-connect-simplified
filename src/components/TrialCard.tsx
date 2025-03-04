@@ -1,23 +1,29 @@
 
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 interface TrialCardProps {
+  id: string;
   title: string;
   description: string;
   location: string;
   compensation: string;
   formUrl: string;
-  onClick: () => void;
 }
 
-const TrialCard = ({ title, description, location, compensation, onClick }: TrialCardProps) => {
+const TrialCard = ({ id, title, description, location, compensation }: TrialCardProps) => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+  
+  const handleClick = () => {
+    navigate(`/apply/${id}`);
+  };
   
   return (
     <div 
       className="group bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer border border-gray-100"
-      onClick={onClick}
+      onClick={handleClick}
     >
       <div className="flex flex-col gap-4">
         <div className="flex items-start justify-between">
