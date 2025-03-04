@@ -7,8 +7,11 @@ import Benefits from "@/components/Benefits";
 import TestimonialCard from "@/components/TestimonialCard";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   const scrollToTrials = () => {
     const trialsSection = document.getElementById('featured-trials');
     if (trialsSection) {
@@ -20,7 +23,7 @@ const Index = () => {
     <div className="min-h-screen">
       <div className="bg-primary text-white text-sm py-2">
         <div className="container mx-auto px-6 text-center">
-          A part of{" "}
+          {t("partOf")}{" "}
           <a 
             href="https://floridacrc.com/" 
             target="_blank" 
@@ -42,29 +45,29 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              What Participants Say
+              {t("whatParticipantsSay")}
             </h2>
             <p className="text-muted-foreground">
-              Real experiences from people who have participated in our clinical trials.
+              {t("realExperiences")}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <TestimonialCard
-              quote="The team was professional and caring throughout the entire process. I felt well-informed and supported."
+              quote={t("testimonial1")}
               author="Sarah Johnson"
-              title="Trial Participant"
+              title={t("trialParticipant")}
               rating={5}
             />
             <TestimonialCard
-              quote="Participating in this trial gave me access to cutting-edge treatment options I wouldn't have had otherwise."
+              quote={t("testimonial2")}
               author="Michael Chen"
-              title="Research Participant"
+              title={t("researchParticipant")}
               rating={5}
             />
             <TestimonialCard
-              quote="The entire experience was well-organized and the staff was incredibly helpful and knowledgeable."
+              quote={t("testimonial3")}
               author="Emily Rodriguez"
-              title="Study Volunteer"
+              title={t("studyVolunteer")}
               rating={5}
             />
           </div>
@@ -75,10 +78,10 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Frequently Asked Questions
+              {t("faq")}
             </h2>
             <p className="text-muted-foreground">
-              Find answers to common questions about participating in clinical trials.
+              {t("findAnswers")}
             </p>
           </div>
           <div className="max-w-2xl mx-auto">

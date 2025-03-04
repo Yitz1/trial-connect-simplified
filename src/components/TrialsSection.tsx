@@ -1,18 +1,34 @@
 
 import { toast } from "sonner";
 import TrialCard from "@/components/TrialCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const featuredTrials = [
-  {
-    title: "Major Depressive Disorder Study",
-    description: "Participating in innovative research for treatment-resistant major depressive disorder. Join us in advancing mental health care.",
-    location: "Miami-Ft. Lauderdale, FL",
-    compensation: "Up to $1,050",
-    formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdpwdmYvWOQ9o5TTc2pChHTRxBqyaHRVaJAblQ9HKHD7Ud00g/viewform?usp=header",
-  },
-];
+// Trial data with translations
+const featuredTrials = {
+  en: [
+    {
+      title: "Major Depressive Disorder Study",
+      description: "Participating in innovative research for treatment-resistant major depressive disorder. Join us in advancing mental health care.",
+      location: "Miami-Ft. Lauderdale, FL",
+      compensation: "Up to $1,050",
+      formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdpwdmYvWOQ9o5TTc2pChHTRxBqyaHRVaJAblQ9HKHD7Ud00g/viewform?usp=header",
+    },
+  ],
+  es: [
+    {
+      title: "Estudio sobre Trastorno Depresivo Mayor",
+      description: "Participando en investigación innovadora para el trastorno depresivo mayor resistente al tratamiento. Únete a nosotros para avanzar en la atención de la salud mental.",
+      location: "Miami-Ft. Lauderdale, FL",
+      compensation: "Hasta $1,050",
+      formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdpwdmYvWOQ9o5TTc2pChHTRxBqyaHRVaJAblQ9HKHD7Ud00g/viewform?usp=header",
+    },
+  ]
+};
 
 const TrialsSection = () => {
+  const { t, language } = useLanguage();
+  const trials = featuredTrials[language];
+
   const handleTrialClick = (formUrl: string) => {
     console.log('Opening form URL:', formUrl);
     try {
@@ -28,14 +44,14 @@ const TrialsSection = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Featured Clinical Trials
+            {t("featuredTrials")}
           </h2>
           <p className="text-muted-foreground">
-            Explore our current research opportunities and find the right trial for you.
+            {t("exploreOpportunities")}
           </p>
         </div>
         <div className="max-w-2xl mx-auto">
-          {featuredTrials.map((trial, index) => (
+          {trials.map((trial, index) => (
             <TrialCard
               key={index}
               {...trial}

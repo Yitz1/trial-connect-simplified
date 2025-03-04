@@ -1,8 +1,11 @@
 
 import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const GeneralApplication = () => {
+  const { t } = useLanguage();
+  
   const handleApplicationClick = () => {
     const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfkW3Z3eLUAM5ixpw03NTaGJYGoqntug1OH4VOQ3cLWdL-3dQ/viewform?usp=header";
     try {
@@ -18,10 +21,10 @@ const GeneralApplication = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            General Application
+            {t("generalApplication")}
           </h2>
           <p className="text-muted-foreground">
-            Interested in future clinical trials? Submit a general application to be considered for upcoming studies.
+            {t("generalAppDescription")}
           </p>
         </div>
         <div className="max-w-2xl mx-auto">
@@ -33,18 +36,18 @@ const GeneralApplication = () => {
               <div className="flex items-start justify-between">
                 <div>
                   <span className="text-xs font-medium text-primary/80 bg-secondary px-3 py-1 rounded-full">
-                    Open for Applications
+                    {t("activeTrial")}
                   </span>
                   <h3 className="mt-3 text-lg font-semibold text-gray-900 group-hover:text-primary transition-colors">
-                    Future Clinical Trials Application
+                    {t("futureTrials")}
                   </h3>
                 </div>
               </div>
               <p className="text-muted-foreground text-sm">
-                Submit your information to be considered for future clinical trials. We'll contact you when studies matching your profile become available.
+                {t("submitInfo")}
               </p>
               <div className="flex items-center gap-2 text-primary group-hover:translate-x-1 transition-transform">
-                <span className="text-sm font-medium">Apply Now</span>
+                <span className="text-sm font-medium">{t("applyNow")}</span>
                 <ArrowRight size={16} />
               </div>
             </div>

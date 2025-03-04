@@ -5,27 +5,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-const faqData = [
-  {
-    question: "What are clinical trials?",
-    answer: "Clinical trials are research studies that test how well new medical approaches work in people. These studies help find better ways to prevent, screen for, diagnose, or treat diseases.",
-  },
-  {
-    question: "Is participating in a clinical trial safe?",
-    answer: "Clinical trials follow strict scientific standards and ethical guidelines to protect participants. Each trial is approved and monitored by an Institutional Review Board (IRB) that ensures risks are minimal and worth any potential benefits.",
-  },
-  {
-    question: "How long do trials typically last?",
-    answer: "The duration varies greatly depending on what's being studied. Some trials last days or weeks, while others may continue for months or years. The specific timeframe will be clearly communicated before you agree to participate.",
-  },
-  {
-    question: "Will I be compensated for participating?",
-    answer: "Most clinical trials offer compensation for participants' time and commitment. The amount varies by study and will be clearly outlined in the study information.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FAQ = () => {
+  const { t } = useLanguage();
+  
+  const faqData = [
+    {
+      question: t("question1"),
+      answer: t("answer1"),
+    },
+    {
+      question: t("question2"),
+      answer: t("answer2"),
+    },
+    {
+      question: t("question3"),
+      answer: t("answer3"),
+    },
+    {
+      question: t("question4"),
+      answer: t("answer4"),
+    },
+  ];
+
   return (
     <div className="border-2 border-purple-100 rounded-xl p-6">
       <Accordion type="single" collapsible className="w-full space-y-4">

@@ -1,34 +1,37 @@
 
 import { Heart, CheckCircle2, Search } from "lucide-react";
-
-const benefits = [
-  {
-    title: "Advance Medical Science",
-    description: "Contribute to groundbreaking research that helps future generations.",
-    icon: Heart,
-  },
-  {
-    title: "Expert Medical Care",
-    description: "Receive attention from leading healthcare professionals.",
-    icon: CheckCircle2,
-  },
-  {
-    title: "Fair Compensation",
-    description: "Get compensated for your valuable time and participation.",
-    icon: Search,
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Benefits = () => {
+  const { t } = useLanguage();
+  
+  const benefits = [
+    {
+      title: t("advanceMedicalScience"),
+      description: t("contributeTo"),
+      icon: Heart,
+    },
+    {
+      title: t("expertMedicalCare"),
+      description: t("receiveAttention"),
+      icon: CheckCircle2,
+    },
+    {
+      title: t("fairCompensation"),
+      description: t("getCompensated"),
+      icon: Search,
+    },
+  ];
+
   return (
     <section className="py-20 bg-accent">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Why Participate?
+            {t("whyParticipate")}
           </h2>
           <p className="text-muted-foreground">
-            Join us in advancing medical research while receiving personal benefits.
+            {t("joinUsAdvancing")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

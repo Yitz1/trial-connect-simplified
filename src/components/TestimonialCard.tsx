@@ -1,5 +1,6 @@
 
 import { StarIcon } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface TestimonialCardProps {
   quote: string;
