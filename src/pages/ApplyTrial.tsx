@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -34,6 +35,14 @@ const ApplyTrial = () => {
           compensation: "Up to $1,050",
           formUrl: formUrls.en,
         },
+        {
+          id: "birthcontrol",
+          title: "Birth Control Trial",
+          description: "Participate in a research study evaluating new birth control methods. Your participation helps advance women's healthcare options.",
+          location: "Miami-Ft. Lauderdale, FL",
+          compensation: "Up to $1,500",
+          formUrl: formUrls.en,
+        },
       ],
       es: [
         {
@@ -44,8 +53,22 @@ const ApplyTrial = () => {
           compensation: "Hasta $1,050",
           formUrl: formUrls.es,
         },
+        {
+          id: "birthcontrol",
+          title: "Ensayo de Control de Natalidad",
+          description: "Participa en un estudio de investigación que evalúa nuevos métodos de control de natalidad. Tu participación ayuda a avanzar en las opciones de atención médica para mujeres.",
+          location: "Miami-Ft. Lauderdale, FL",
+          compensation: "Hasta $1,500",
+          formUrl: formUrls.es,
+        },
       ]
     };
+
+    // Special handling for the general application
+    if (trialId === 'general') {
+      navigate('/apply/general');
+      return;
+    }
 
     // Find the trial by ID
     const currentTrial = featuredTrials[language].find(t => t.id === trialId);

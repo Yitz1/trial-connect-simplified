@@ -2,18 +2,14 @@
 import { toast } from "sonner";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 
 const GeneralApplication = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
   const handleApplicationClick = () => {
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSfkW3Z3eLUAM5ixpw03NTaGJYGoqntug1OH4VOQ3cLWdL-3dQ/viewform?usp=header";
-    try {
-      window.open(formUrl, '_blank', 'noopener,noreferrer');
-    } catch (error) {
-      console.error('Error opening form:', error);
-      toast.error("Unable to open the form. Please try again later.");
-    }
+    navigate('/apply/general');
   };
 
   return (
@@ -35,9 +31,6 @@ const GeneralApplication = () => {
             <div className="flex flex-col gap-4">
               <div className="flex items-start justify-between">
                 <div>
-                  <span className="text-xs font-medium text-primary/80 bg-secondary px-3 py-1 rounded-full">
-                    {t("activeTrial")}
-                  </span>
                   <h3 className="mt-3 text-lg font-semibold text-gray-900 group-hover:text-primary transition-colors">
                     {t("futureTrials")}
                   </h3>
