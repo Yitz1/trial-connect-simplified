@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { formUrls, getFeaturedTrials } from "@/utils/trialData";
 
 interface LanguageOption {
   label: string;
@@ -14,64 +15,21 @@ interface LanguageOption {
 const ApplyTrial = () => {
   const { trialId } = useParams();
   const navigate = useNavigate();
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const [trial, setTrial] = useState<any>(null);
-  
-  // English and Spanish forms
-  const formUrls = {
-    en: "https://docs.google.com/forms/d/e/1FAIpQLSdpwdmYvWOQ9o5TTc2pChHTRxBqyaHRVaJAblQ9HKHD7Ud00g/viewform?usp=header",
-    es: "https://docs.google.com/forms/d/e/1FAIpQLSeUKhuLiLntSUQeSsKZkOoUhuMABp6fwW2DU3ugAMmMmPCTxQ/viewform?usp=header"
-  };
 
   useEffect(() => {
-    // Fetch the trial data based on the current language
-    const featuredTrials = {
-      en: [
-        {
-          id: "depression",
-          title: "Major Depressive Disorder Study",
-          description: "Participating in innovative research for treatment-resistant major depressive disorder. Join us in advancing mental health care.",
-          location: "Miami-Ft. Lauderdale, FL",
-          compensation: "Up to $1,050",
-          formUrl: formUrls.en,
-        },
-        {
-          id: "birthcontrol",
-          title: "Birth Control Trial",
-          description: "Participate in a research study evaluating new birth control methods. Your participation helps advance women's healthcare options.",
-          location: "Miami-Ft. Lauderdale, FL",
-          compensation: "Up to $1,500",
-          formUrl: formUrls.en,
-        },
-      ],
-      es: [
-        {
-          id: "depression",
-          title: "Estudio sobre Trastorno Depresivo Mayor",
-          description: "Participando en investigación innovadora para el trastorno depresivo mayor resistente al tratamiento. Únete a nosotros para avanzar en la atención de la salud mental.",
-          location: "Miami-Ft. Lauderdale, FL",
-          compensation: "Hasta $1,050",
-          formUrl: formUrls.es,
-        },
-        {
-          id: "birthcontrol",
-          title: "Ensayo de Control de Natalidad",
-          description: "Participa en un estudio de investigación que evalúa nuevos métodos de control de natalidad. Tu participación ayuda a avanzar en las opciones de atención médica para mujeres.",
-          location: "Miami-Ft. Lauderdale, FL",
-          compensation: "Hasta $1,500",
-          formUrl: formUrls.es,
-        },
-      ]
-    };
-
     // Special handling for the general application
     if (trialId === 'general') {
       navigate('/apply/general');
       return;
     }
 
+    // Get trials data from the utility
+    const currentTrials = getFeaturedTrials(language);
+    
     // Find the trial by ID
-    const currentTrial = featuredTrials[language].find(t => t.id === trialId);
+    const currentTrial = currentTrials.find(t => t.id === trialId);
     
     if (currentTrial) {
       setTrial(currentTrial);
@@ -95,16 +53,18 @@ const ApplyTrial = () => {
   ];
 
   const handleLanguageSelect = (langCode: string) => {
-    const formUrl = langCode === 'en' ? formUrls.en : formUrls.es;
+    if (!trialId) return;
     
-    if (!formUrl) {
+    const trialFormUrl = formUrls[langCode as 'en' | 'es'][trialId as keyof typeof formUrls.en];
+    
+    if (!trialFormUrl) {
       toast.error(language === 'en' 
         ? "This form is not yet available in the selected language" 
         : "Este formulario aún no está disponible en el idioma seleccionado");
       return;
     }
     
-    window.open(formUrl, '_blank', 'noopener,noreferrer');
+    window.open(trialFormUrl, '_blank', 'noopener,noreferrer');
   };
 
   if (!trial) {
